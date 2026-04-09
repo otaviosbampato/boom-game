@@ -124,8 +124,8 @@ function infiniteLoop() {
         const passarinhoRect = passarinhoAtual.getBoundingClientRect();
 
         if (
-            bonecoRect.left - 40 < passarinhoRect.right - 30 &&
-            bonecoRect.right - 40 > passarinhoRect.left + 30 &&
+            bonecoRect.left - 40 < passarinhoRect.right &&
+            bonecoRect.right - 40 > passarinhoRect.left &&
             bonecoRect.top - 40 < passarinhoRect.bottom - 30 &&
             bonecoRect.bottom - 40 > passarinhoRect.top + 30
         ) {
@@ -207,6 +207,9 @@ function gameOver(rect) {
         predios.forEach(p => p.remove());
         predios.length = 0;
         
+        passarinhos.forEach(p => p.remove());
+        passarinhos.length = 0;
+
         boneco.style.display = 'block';
 
         btnRestart.remove();
